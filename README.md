@@ -66,7 +66,7 @@ Dans [horizon.prefect.io](https://horizon.prefect.io), créer un serveur depuis 
 |---|---|
 | Point d'entrée | `serveur.py:mcp` |
 | Dépendances | `pyproject.toml` |
-| Python | 3.12, le défaut de Horizon (`.python-version`) |
+| Python | 3.14, lue dans `.python-version` : la plus récente que Horizon accepte (3.11 à 3.14) |
 | Authentification | activée (le défaut) |
 | Variables | aucune |
 

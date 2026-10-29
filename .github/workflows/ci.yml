@@ -28,7 +28,9 @@ jobs:
         with:
           persist-credentials: false
 
-      # Python 3.12, celui de `.python-version`, qui est aussi le défaut de Horizon.
+      # Python 3.14, celui de `.python-version` : la plus récente que Horizon
+      # construise (3.11 à 3.14). Devant une version qu'il ne connaît pas, il
+      # retomberait sur 3.12, et la CI ne testerait plus ce qui tourne.
       - uses: astral-sh/setup-uv@v10.3.3
 
       - run: uv sync --locked

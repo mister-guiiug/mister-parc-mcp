@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Serveur MCP en lecture seule sur l'état du parc mister-guiiug : tableau de bord et socle."
 readme = "README.md"
 license = "MIT"
-requires-python = ">=3.12"
+requires-python = ">=3.14"
 dependencies = [
     "fastmcp>=4.1.4",
     "httpx>=0.28.1",
@@ -22,7 +22,7 @@ pythonpath = ["."]
 
 [tool.ruff]
 line-length = 100
-target-version = "py312"
+target-version = "py314"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
