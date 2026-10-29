@@ -44,7 +44,9 @@ Le serveur parle MCP **2026-07-28**, par la bibliothèque `mcp` 2.3 et FastMCP 4
 `server/discover`, `resultType` sur chaque résultat. Ce qui revient au serveur lui-même :
 
 - son identité : `serverInfo` porte son nom et **sa** version, celle de `pyproject.toml` ;
-- la fraîcheur de ses listes (SEP-2549) : `ttlMs` d'une heure et `cacheScope` `private` ;
+- la fraîcheur de ses listes (SEP-2549) : `ttlMs` d'une heure et `cacheScope` `private`.
+  Derrière Horizon, la liste arrive pourtant avec `ttlMs` 0 : c'est la passerelle qui la
+  réécrit (constaté le 29/10 : 3 600 000 en HTTP local, 0 par `fastmcp.app`) ;
 - une liste d'outils dans un ordre fixe, que les clients peuvent garder en cache ;
 - des schémas JSON Schema 2020-12 en entrée comme en sortie.
 
