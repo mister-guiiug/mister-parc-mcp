@@ -38,6 +38,26 @@
    ]
   },
   {
+   "cle": "prs",
+   "niveau": "decision",
+   "titre": "1 pull request à relire",
+   "n": 1,
+   "details": [
+    {
+     "depot": "mister-cim10",
+     "num": 158,
+     "titre": "fix(securite): le mot secret OMS n'est plus gardé dans le navigateur",
+     "brouillon": false,
+     "branche": "fix/secret-oms-2026-10-29",
+     "date": "2026-10-29T20:55:00Z",
+     "auteur": "mister-guiiug",
+     "robot": false,
+     "url": "https://github.com/mister-guiiug/mister-cim10/pull/158",
+     "ci": "vert"
+    }
+   ]
+  },
+  {
    "cle": "correctifs",
    "niveau": "entretien",
    "titre": "1 correctif ou mineure à monter",
@@ -57,6 +77,20 @@
        "transitif": false
       }
      ]
+    }
+   ]
+  },
+  {
+   "cle": "renovate",
+   "niveau": "entretien",
+   "titre": "2 mises à jour Renovate en attente",
+   "n": 2,
+   "details": [
+    {
+     "depot": "mister-commitia",
+     "n": 2,
+     "majeures": 1,
+     "url": "https://github.com/mister-guiiug/mister-commitia/issues/1"
     }
    ]
   }

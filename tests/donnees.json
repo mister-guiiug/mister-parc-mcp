@@ -114,7 +114,19 @@
    },
    "local": null,
    "pagesUrl": "https://mister-guiiug.github.io/mister-cim10/",
-   "prs": [],
+   "prs": [
+    {
+     "num": 158,
+     "titre": "fix(securite): le mot secret OMS n'est plus gardé dans le navigateur",
+     "brouillon": false,
+     "branche": "fix/secret-oms-2026-10-29",
+     "date": "2026-10-29T20:55:00Z",
+     "auteur": "mister-guiiug",
+     "robot": false,
+     "url": "https://github.com/mister-guiiug/mister-cim10/pull/158",
+     "ci": "vert"
+    }
+   ],
    "workflows": [
     {
      "nom": "CI",
@@ -786,7 +798,23 @@
      "amont": null,
      "rust": true
     }
-   ]
+   ],
+   "renovate": {
+    "issue": "https://github.com/mister-guiiug/mister-commitia/issues/1",
+    "enAttente": 2,
+    "majeures": 1,
+    "introuvables": [],
+    "mises": [
+     {
+      "titre": "Update Rust crate tokio to v1.55.0",
+      "majeure": false
+     },
+     {
+      "titre": "Update Rust crate rusqlite to v0.42",
+      "majeure": true
+     }
+    ]
+   }
   },
   {
    "nom": "pwa-starter-kit",

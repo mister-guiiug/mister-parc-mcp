@@ -100,5 +100,14 @@ async def client(demandes: list[str]) -> AsyncIterator[Client]:
         yield c
 
 
+async def appeler(client: Client, outil: str, arguments: dict | None = None) -> dict:
+    """La réponse structurée d'un outil, `structuredContent`, telle que le client la reçoit.
+
+    `.data` ne convient plus : depuis que chaque outil annonce un `outputSchema`, FastMCP
+    en fait des objets typés. Le contrat, c'est le JSON.
+    """
+    return (await client.call_tool(outil, arguments or {})).structured_content
+
+
 def donnees() -> dict:
     return json.loads((ICI / "donnees.json").read_text(encoding="utf-8"))
