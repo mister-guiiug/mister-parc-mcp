@@ -1,0 +1,64 @@
+{
+ "genere": "2026-10-29T18:27:49.157Z",
+ "items": [
+  {
+   "cle": "alertes",
+   "niveau": "attention",
+   "titre": "2 dépôts ont des alertes de vulnérabilité",
+   "n": 2,
+   "details": [
+    {
+     "depot": "mister-cim10",
+     "n": 1,
+     "graves": 0
+    },
+    {
+     "depot": "pwa-starter-kit",
+     "n": 1,
+     "graves": 0
+    }
+   ]
+  },
+  {
+   "cle": "scanning",
+   "niveau": "attention",
+   "titre": "2 dépôts ont des alertes sécurité et qualité",
+   "n": 2,
+   "details": [
+    {
+     "depot": "mister-cim10",
+     "n": 1,
+     "graves": 1
+    },
+    {
+     "depot": "mister-commitia",
+     "n": 13,
+     "graves": 5
+    }
+   ]
+  },
+  {
+   "cle": "correctifs",
+   "niveau": "entretien",
+   "titre": "1 correctif ou mineure à monter",
+   "n": 1,
+   "details": [
+    {
+     "paquet": "lucide-react",
+     "alias": null,
+     "fichier": null,
+     "cible": "1.64.0",
+     "gravite": "mineure",
+     "depots": [
+      {
+       "depot": "mister-commitia",
+       "dossier": "apps/desktop",
+       "version": "1.63.0",
+       "transitif": false
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

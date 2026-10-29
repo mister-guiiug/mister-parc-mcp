@@ -1,0 +1,1661 @@
+{
+ "genere": "2026-10-29T18:27:49.157Z",
+ "compte": "mister-guiiug",
+ "source": "api",
+ "avecLocal": false,
+ "publicsSeulement": true,
+ "soi": "parc-dashboard",
+ "familles": [
+  "pwa",
+  "desktop",
+  "socle",
+  "autre"
+ ],
+ "parFamille": {
+  "pwa": {
+   "depots": 20,
+   "workflows": 136,
+   "verts": 118,
+   "rouges": 0,
+   "depotsRouges": 0,
+   "sites": 20,
+   "taux": 100
+  },
+  "desktop": {
+   "depots": 3,
+   "workflows": 9,
+   "verts": 7,
+   "rouges": 0,
+   "depotsRouges": 0,
+   "sites": 0,
+   "taux": 100
+  },
+  "socle": {
+   "depots": 3,
+   "workflows": 23,
+   "verts": 17,
+   "rouges": 0,
+   "depotsRouges": 0,
+   "sites": 2,
+   "taux": 100
+  },
+  "autre": {
+   "depots": 5,
+   "workflows": 12,
+   "verts": 11,
+   "rouges": 0,
+   "depotsRouges": 0,
+   "sites": 1,
+   "taux": 100
+  }
+ },
+ "kpi": {
+  "depots": 31,
+  "publics": 31,
+  "prives": 0,
+  "workflows": 180,
+  "workflowsTous": 189,
+  "reutilisables": 9,
+  "verts": 153,
+  "rouges": 0,
+  "neutres": 2,
+  "jamais": 11,
+  "depotsRouges": 0,
+  "depotsModifies": 0,
+  "horsBrancheDefaut": 0,
+  "prOuvertes": 0,
+  "sites": 23,
+  "sitesEnLigne": 23,
+  "socleAmont": "6.28.1",
+  "socleEnRetard": 0,
+  "appsPwa": 20,
+  "alertesLisibles": true,
+  "alertes": 22,
+  "alertesGraves": 1,
+  "alertesProduction": 0,
+  "depotsSansAlertes": 2,
+  "depotsAlertesIllisibles": 0,
+  "scanningLisible": true,
+  "scanning": 18,
+  "scanningGraves": 6,
+  "scanningErreurs": 1,
+  "depotsSansScanning": 0,
+  "depotsScanningIllisibles": 0,
+  "envManifestLisibles": true,
+  "sansEnvManifest": 0,
+  "rulesetsLisibles": true,
+  "depotsSansRuleset": 0,
+  "lecturesIncompletes": 0,
+  "librairiesDatees": 109,
+  "dormantes": 6,
+  "dormantesArretees": 1,
+  "taux": 100
+ },
+ "depots": [
+  {
+   "nom": "mister-cim10",
+   "nwo": "mister-guiiug/mister-cim10",
+   "url": "https://github.com/mister-guiiug/mister-cim10",
+   "visibilite": "PUBLIC",
+   "prive": false,
+   "description": "Aide à la cotation CIM-10 : dictée d'un compte-rendu, codes suggérés, export. En local.",
+   "licence": "MIT",
+   "tailleKo": 2677,
+   "brancheDefaut": "main",
+   "pushGitHub": "2026-10-29T18:22:29Z",
+   "joursDepuisPush": 0,
+   "commit": {
+    "sha": "ec3e06b",
+    "auteur": "GuiiuG",
+    "date": "2026-10-29T18:22:27Z",
+    "dateCommit": "2026-10-29T18:22:27Z",
+    "sujet": "chore(deps): correctifs et mineures du 29/10, alertes CodeQL (#157)",
+    "jours": 0
+   },
+   "local": null,
+   "pagesUrl": "https://mister-guiiug.github.io/mister-cim10/",
+   "prs": [],
+   "workflows": [
+    {
+     "nom": "CI",
+     "fichier": "ci.yml",
+     "chemin": ".github/workflows/ci.yml",
+     "reutilisable": false,
+     "etat": "encours",
+     "surDefaut": true,
+     "conclusion": null,
+     "date": "2026-10-29T18:22:31Z",
+     "url": "https://github.com/mister-guiiug/mister-cim10/actions/runs/40930195615",
+     "duree": 288000,
+     "branche": "main",
+     "derniers": [
+      {
+       "etat": "encours",
+       "conclusion": null,
+       "statut": "in_progress",
+       "date": "2026-10-29T18:22:31Z",
+       "url": "https://github.com/mister-guiiug/mister-cim10/actions/runs/40930195615",
+       "num": 351,
+       "ms": 288000,
+       "branche": "main",
+       "titre": "chore(deps): correctifs et mineures du 29/10, alertes CodeQL (#157)",
+       "id": 40930195615
+      }
+     ]
+    },
+    {
+     "nom": "Cleanup workflow runs",
+     "fichier": "cleanup-runs.yml",
+     "chemin": ".github/workflows/cleanup-runs.yml",
+     "reutilisable": false,
+     "etat": "vert",
+     "surDefaut": true,
+     "conclusion": "success",
+     "date": "2026-09-04T21:54:43Z",
+     "url": "https://github.com/mister-guiiug/mister-cim10/actions/runs/33923220916",
+     "duree": 79000,
+     "branche": "main",
+     "derniers": [
+      {
+       "etat": "vert",
+       "conclusion": "success",
+       "statut": "completed",
+       "date": "2026-09-04T21:54:43Z",
+       "url": "https://github.com/mister-guiiug/mister-cim10/actions/runs/33923220916",
+       "num": 2,
+       "ms": 79000,
+       "branche": "main",
+       "titre": "Cleanup workflow runs",
+       "id": 33923220916
+      }
+     ]
+    },
+    {
+     "nom": "CodeQL",
+     "fichier": "dynamic/github-code-scanning/codeql",
+     "chemin": "dynamic/github-code-scanning/codeql",
+     "reutilisable": false,
+     "etat": "vert",
+     "surDefaut": true,
+     "conclusion": "success",
+     "date": "2026-10-29T18:22:30Z",
+     "url": "https://github.com/mister-guiiug/mister-cim10/actions/runs/40930194111",
+     "duree": 240000,
+     "branche": "main",
+     "derniers": [
+      {
+       "etat": "vert",
+       "conclusion": "success",
+       "statut": "completed",
+       "date": "2026-10-29T18:22:30Z",
+       "url": "https://github.com/mister-guiiug/mister-cim10/actions/runs/40930194111",
+       "num": 20,
+       "ms": 240000,
+       "branche": "main",
+       "titre": "Push on main",
+       "id": 40930194111
+      }
+     ]
+    },
+    {
+     "nom": "Deploy",
+     "fichier": "deploy.yml",
+     "chemin": ".github/workflows/deploy.yml",
+     "reutilisable": false,
+     "etat": "vert",
+     "surDefaut": true,
+     "conclusion": "success",
+     "date": "2026-10-29T18:22:31Z",
+     "url": "https://github.com/mister-guiiug/mister-cim10/actions/runs/40930195680",
+     "duree": 255000,
+     "branche": "main",
+     "derniers": [
+      {
+       "etat": "vert",
+       "conclusion": "success",
+       "statut": "completed",
+       "date": "2026-10-29T18:22:31Z",
+       "url": "https://github.com/mister-guiiug/mister-cim10/actions/runs/40930195680",
+       "num": 177,
+       "ms": 255000,
+       "branche": "main",
+       "titre": "chore(deps): correctifs et mineures du 29/10, alertes CodeQL (#157)",
+       "id": 40930195680
+      }
+     ]
+    },
+    {
+     "nom": "Deploy WHO Worker",
+     "fichier": "deploy-worker.yml",
+     "chemin": ".github/workflows/deploy-worker.yml",
+     "reutilisable": false,
+     "etat": "vert",
+     "surDefaut": true,
+     "conclusion": "success",
+     "date": "2026-10-29T18:22:31Z",
+     "url": "https://github.com/mister-guiiug/mister-cim10/actions/runs/40930195420",
+     "duree": 212000,
+     "branche": "main",
+     "derniers": [
+      {
+       "etat": "vert",
+       "conclusion": "success",
+       "statut": "completed",
+       "date": "2026-10-29T18:22:31Z",
+       "url": "https://github.com/mister-guiiug/mister-cim10/actions/runs/40930195420",
+       "num": 12,
+       "ms": 212000,
+       "branche": "main",
+       "titre": "chore(deps): correctifs et mineures du 29/10, alertes CodeQL (#157)",
+       "id": 40930195420
+      }
+     ]
+    },
+    {
+     "nom": "Lighthouse",
+     "fichier": "lighthouse.yml",
+     "chemin": ".github/workflows/lighthouse.yml",
+     "reutilisable": false,
+     "etat": "vert",
+     "surDefaut": false,
+     "conclusion": "success",
+     "date": "2026-10-29T18:10:55Z",
+     "url": "https://github.com/mister-guiiug/mister-cim10/actions/runs/40928359334",
+     "duree": 177000,
+     "branche": "chore/correctifs-mineures-2026-10-29",
+     "derniers": [
+      {
+       "etat": "vert",
+       "conclusion": "success",
+       "statut": "completed",
+       "date": "2026-10-29T18:10:55Z",
+       "url": "https://github.com/mister-guiiug/mister-cim10/actions/runs/40928359334",
+       "num": 166,
+       "ms": 177000,
+       "branche": "chore/correctifs-mineures-2026-10-29",
+       "titre": "chore(deps): correctifs et mineures du 29/10, alertes CodeQL",
+       "id": 40928359334
+      }
+     ]
+    }
+   ],
+   "compte": {
+    "vert": 5,
+    "rouge": 0,
+    "neutre": 0,
+    "encours": 1,
+    "jamais": 0
+   },
+   "dossiers": [
+    {
+     "dossier": "workers",
+     "lock": "propre"
+    }
+   ],
+   "dossiersIncertains": false,
+   "usageSocle": {
+    "v": 4,
+    "workflows": [
+     "pwa-ci.yml",
+     "pwa-deploy.yml",
+     "pwa-lighthouse.yml"
+    ],
+    "appels": [
+     {
+      "workflow": "pwa-ci.yml",
+      "avec": {
+       "run-doctor": "true",
+       "run-e2e": "true",
+       "run-type-check-7": "true"
+      }
+     },
+     {
+      "workflow": "pwa-deploy.yml",
+      "avec": {
+       "use-base-path": "true",
+       "build-env": "|"
+      }
+     },
+     {
+      "workflow": "pwa-lighthouse.yml",
+      "avec": {}
+     }
+    ],
+    "fichiers": [],
+    "incomplet": false,
+    "modules": [
+     "analytics",
+     "components.css",
+     "eslint-react",
+     "react/i18n",
+     "tsconfig-app-react"
+    ],
+    "inconnus": [],
+    "viaMotif": [],
+    "outils": [
+     "pwa-bundle-budget",
+     "pwa-icons",
+     "pwa-typecheck-7"
+    ],
+    "outilsCi": [
+     "pwa-doctor"
+    ]
+   },
+   "paquet": {
+    "nom": "mister-cim10",
+    "version": "1.0.0",
+    "prive": true
+   },
+   "nbDeps": 32,
+   "nbVerrouilles": 673,
+   "nbCrates": null,
+   "langage": "TypeScript",
+   "lectureIncomplete": false,
+   "famille": "pwa",
+   "role": null,
+   "maturite": "stable",
+   "alertes": {
+    "etat": "lu",
+    "total": 1,
+    "graves": 0,
+    "production": 0,
+    "ids": [
+     "CVE-2026-93753"
+    ]
+   },
+   "scanning": {
+    "etat": "lu",
+    "total": 1,
+    "graves": 1,
+    "erreurs": 1,
+    "ids": [
+     "js/clear-text-storage-of-sensitive-data"
+    ]
+   },
+   "envManifest": {
+    "etat": "ok",
+    "n": 6
+   },
+   "ruleset": {
+    "etat": "actif",
+    "n": 1
+   },
+   "pages": {
+    "url": "https://mister-guiiug.github.io/mister-cim10/",
+    "code": 200,
+    "ok": true,
+    "ms": 47,
+    "titre": "Mister CIM10 - aide au codage CIM-10 dans le navigateur"
+   },
+   "prod": {
+    "commit": "ec3e06b",
+    "construit": "2026-10-29T18:26:06.071Z",
+    "etat": "aJour",
+    "fugaces": [],
+    "mortes": []
+   },
+   "pile": [
+    {
+     "nom": "pile.socle",
+     "paquet": "@mister-guiiug/dev-pwa-config",
+     "version": "6.28.1",
+     "verrouille": true,
+     "amont": "6.28.1"
+    },
+    {
+     "nom": "React",
+     "paquet": "react",
+     "version": "19.3.1",
+     "verrouille": true,
+     "amont": "19.3.1"
+    },
+    {
+     "nom": "Vite",
+     "paquet": "vite",
+     "version": "8.3.5",
+     "verrouille": true,
+     "amont": "8.3.5"
+    },
+    {
+     "nom": "Vitest",
+     "paquet": "vitest",
+     "version": "5.0.5",
+     "verrouille": true,
+     "amont": "5.0.5"
+    },
+    {
+     "nom": "TypeScript",
+     "paquet": "typescript",
+     "version": "6.0.3",
+     "verrouille": true,
+     "amont": "7.0.2"
+    },
+    {
+     "nom": "Tailwind",
+     "paquet": "tailwindcss",
+     "version": "4.3.3",
+     "verrouille": true,
+     "amont": "4.3.3"
+    },
+    {
+     "nom": "Playwright",
+     "paquet": "@playwright/test",
+     "version": "1.64.1",
+     "verrouille": true,
+     "amont": "1.64.1"
+    }
+   ]
+  },
+  {
+   "nom": "mister-claude-skills",
+   "nwo": "mister-guiiug/mister-claude-skills",
+   "url": "https://github.com/mister-guiiug/mister-claude-skills",
+   "visibilite": "PUBLIC",
+   "prive": false,
+   "description": "Skills Claude pour le CV, LinkedIn et le personal branding d’un profil IT senior.",
+   "licence": "MIT",
+   "tailleKo": 225,
+   "brancheDefaut": "main",
+   "pushGitHub": "2026-10-28T21:37:49Z",
+   "joursDepuisPush": 0,
+   "commit": {
+    "sha": "9f7d167",
+    "auteur": "GuiiuG",
+    "date": "2026-10-28T21:37:47Z",
+    "dateCommit": "2026-10-28T21:37:47Z",
+    "sujet": "feat: plugin career-skills, ressources citées, entrées propres, tests de déclenchement (#12)",
+    "jours": 0
+   },
+   "local": null,
+   "pagesUrl": null,
+   "prs": [],
+   "workflows": [
+    {
+     "nom": "CodeQL",
+     "fichier": "dynamic/github-code-scanning/codeql",
+     "chemin": "dynamic/github-code-scanning/codeql",
+     "reutilisable": false,
+     "etat": "vert",
+     "surDefaut": true,
+     "conclusion": "success",
+     "date": "2026-10-28T21:37:50Z",
+     "url": "https://github.com/mister-guiiug/mister-claude-skills/actions/runs/40773530611",
+     "duree": 63000,
+     "branche": "main",
+     "derniers": [
+      {
+       "etat": "vert",
+       "conclusion": "success",
+       "statut": "completed",
+       "date": "2026-10-28T21:37:50Z",
+       "url": "https://github.com/mister-guiiug/mister-claude-skills/actions/runs/40773530611",
+       "num": 3,
+       "ms": 63000,
+       "branche": "main",
+       "titre": "Push on main",
+       "id": 40773530611
+      }
+     ]
+    },
+    {
+     "nom": "Validate skills",
+     "fichier": "validate.yml",
+     "chemin": ".github/workflows/validate.yml",
+     "reutilisable": false,
+     "etat": "vert",
+     "surDefaut": true,
+     "conclusion": "success",
+     "date": "2026-10-28T21:37:50Z",
+     "url": "https://github.com/mister-guiiug/mister-claude-skills/actions/runs/40773531375",
+     "duree": 16000,
+     "branche": "main",
+     "derniers": [
+      {
+       "etat": "vert",
+       "conclusion": "success",
+       "statut": "completed",
+       "date": "2026-10-28T21:37:50Z",
+       "url": "https://github.com/mister-guiiug/mister-claude-skills/actions/runs/40773531375",
+       "num": 21,
+       "ms": 16000,
+       "branche": "main",
+       "titre": "feat: plugin career-skills, ressources citées, entrées propres, tests…",
+       "id": 40773531375
+      }
+     ]
+    }
+   ],
+   "compte": {
+    "vert": 2,
+    "rouge": 0,
+    "neutre": 0,
+    "encours": 0,
+    "jamais": 0
+   },
+   "dossiers": [],
+   "dossiersIncertains": false,
+   "usageSocle": null,
+   "paquet": null,
+   "nbDeps": 0,
+   "nbVerrouilles": null,
+   "nbCrates": null,
+   "langage": "Python",
+   "lectureIncomplete": false,
+   "famille": "autre",
+   "role": "Python",
+   "maturite": null,
+   "alertes": {
+    "etat": "lu",
+    "total": 0,
+    "graves": 0,
+    "production": 0,
+    "ids": []
+   },
+   "scanning": {
+    "etat": "lu",
+    "total": 0,
+    "graves": 0,
+    "erreurs": 0,
+    "ids": []
+   },
+   "envManifest": {
+    "etat": "hors-scope"
+   },
+   "ruleset": {
+    "etat": "actif",
+    "n": 1
+   },
+   "pages": null,
+   "pile": []
+  },
+  {
+   "nom": "mister-commitia",
+   "nwo": "mister-guiiug/mister-commitia",
+   "url": "https://github.com/mister-guiiug/mister-commitia",
+   "visibilite": "PUBLIC",
+   "prive": false,
+   "description": "Étude make-or-buy : réécriture contrôlée d'historique Git et nettoyage CI/CD, par IA.",
+   "licence": "MIT",
+   "tailleKo": 1670,
+   "brancheDefaut": "main",
+   "pushGitHub": "2026-10-29T18:11:46Z",
+   "joursDepuisPush": 0,
+   "commit": {
+    "sha": "015cfed",
+    "auteur": "GuiiuG",
+    "date": "2026-10-29T18:11:44Z",
+    "dateCommit": "2026-10-29T18:11:44Z",
+    "sujet": "chore(deps): rusqlite 0.41, correctifs et mineures du 28/10 (#35)",
+    "jours": 0
+   },
+   "local": null,
+   "pagesUrl": null,
+   "prs": [],
+   "workflows": [
+    {
+     "nom": "CI",
+     "fichier": "ci.yml",
+     "chemin": ".github/workflows/ci.yml",
+     "reutilisable": false,
+     "etat": "vert",
+     "surDefaut": true,
+     "conclusion": "success",
+     "date": "2026-10-29T18:11:48Z",
+     "url": "https://github.com/mister-guiiug/mister-commitia/actions/runs/40928499713",
+     "duree": 373000,
+     "branche": "main",
+     "derniers": [
+      {
+       "etat": "vert",
+       "conclusion": "success",
+       "statut": "completed",
+       "date": "2026-10-29T18:11:48Z",
+       "url": "https://github.com/mister-guiiug/mister-commitia/actions/runs/40928499713",
+       "num": 112,
+       "ms": 373000,
+       "branche": "main",
+       "titre": "chore(deps): rusqlite 0.41, correctifs et mineures du 28/10 (#35)",
+       "id": 40928499713
+      }
+     ]
+    },
+    {
+     "nom": "CodeQL",
+     "fichier": "dynamic/github-code-scanning/codeql",
+     "chemin": "dynamic/github-code-scanning/codeql",
+     "reutilisable": false,
+     "etat": "vert",
+     "surDefaut": true,
+     "conclusion": "success",
+     "date": "2026-10-29T18:11:48Z",
+     "url": "https://github.com/mister-guiiug/mister-commitia/actions/runs/40928499213",
+     "duree": 711000,
+     "branche": "main",
+     "derniers": [
+      {
+       "etat": "vert",
+       "conclusion": "success",
+       "statut": "completed",
+       "date": "2026-10-29T18:11:48Z",
+       "url": "https://github.com/mister-guiiug/mister-commitia/actions/runs/40928499213",
+       "num": 7,
+       "ms": 711000,
+       "branche": "main",
+       "titre": "Push on main",
+       "id": 40928499213
+      }
+     ]
+    },
+    {
+     "nom": "Release",
+     "fichier": "release.yml",
+     "chemin": ".github/workflows/release.yml",
+     "reutilisable": false,
+     "etat": "vert",
+     "surDefaut": false,
+     "conclusion": "success",
+     "date": "2026-07-24T20:35:59Z",
+     "url": "https://github.com/mister-guiiug/mister-commitia/actions/runs/30124676866",
+     "duree": 548000,
+     "branche": "v0.1.0",
+     "derniers": [
+      {
+       "etat": "vert",
+       "conclusion": "success",
+       "statut": "completed",
+       "date": "2026-07-24T20:35:59Z",
+       "url": "https://github.com/mister-guiiug/mister-commitia/actions/runs/30124676866",
+       "num": 1,
+       "ms": 548000,
+       "branche": "v0.1.0",
+       "titre": "ci: workflow de release sur tag v* (bundles + GitHub Release)",
+       "id": 30124676866
+      }
+     ]
+    }
+   ],
+   "compte": {
+    "vert": 3,
+    "rouge": 0,
+    "neutre": 0,
+    "encours": 0,
+    "jamais": 0
+   },
+   "dossiers": [
+    {
+     "dossier": "apps/desktop",
+     "lock": "propre"
+    }
+   ],
+   "dossiersIncertains": false,
+   "usageSocle": null,
+   "paquet": null,
+   "nbDeps": 0,
+   "nbVerrouilles": null,
+   "nbCrates": 525,
+   "langage": "Rust",
+   "lectureIncomplete": false,
+   "famille": "desktop",
+   "role": "Tauri",
+   "maturite": null,
+   "alertes": {
+    "etat": "lu",
+    "total": 0,
+    "graves": 0,
+    "production": 0,
+    "ids": []
+   },
+   "scanning": {
+    "etat": "lu",
+    "total": 13,
+    "graves": 5,
+    "erreurs": 0,
+    "ids": [
+     "rust/cleartext-logging",
+     "rust/cleartext-logging",
+     "rust/cleartext-logging",
+     "rust/cleartext-logging",
+     "rust/cleartext-logging",
+     "actions/missing-workflow-permissions",
+     "actions/missing-workflow-permissions",
+     "actions/missing-workflow-permissions"
+    ]
+   },
+   "envManifest": {
+    "etat": "hors-scope"
+   },
+   "ruleset": {
+    "etat": "actif",
+    "n": 1
+   },
+   "pages": null,
+   "pile": [
+    {
+     "nom": "tauri",
+     "paquet": "tauri",
+     "version": "2.12.5",
+     "verrouille": true,
+     "amont": null,
+     "rust": true
+    },
+    {
+     "nom": "tokio",
+     "paquet": "tokio",
+     "version": "1.54.1",
+     "verrouille": true,
+     "amont": null,
+     "rust": true
+    },
+    {
+     "nom": "serde",
+     "paquet": "serde",
+     "version": "1.0.229",
+     "verrouille": true,
+     "amont": null,
+     "rust": true
+    },
+    {
+     "nom": "serde_json",
+     "paquet": "serde_json",
+     "version": "1.0.154",
+     "verrouille": true,
+     "amont": null,
+     "rust": true
+    },
+    {
+     "nom": "anyhow",
+     "paquet": "anyhow",
+     "version": "1.0.104",
+     "verrouille": true,
+     "amont": null,
+     "rust": true
+    },
+    {
+     "nom": "thiserror",
+     "paquet": "thiserror",
+     "version": "2.0.21",
+     "verrouille": true,
+     "amont": null,
+     "rust": true
+    },
+    {
+     "nom": "chrono",
+     "paquet": "chrono",
+     "version": "0.4.45",
+     "verrouille": true,
+     "amont": null,
+     "rust": true
+    }
+   ]
+  },
+  {
+   "nom": "pwa-starter-kit",
+   "nwo": "mister-guiiug/pwa-starter-kit",
+   "url": "https://github.com/mister-guiiug/pwa-starter-kit",
+   "visibilite": "PUBLIC",
+   "prive": false,
+   "description": "Le squelette d'app PWA de la famille, prêt à cloner, sur @mister-guiiug/dev-pwa-config.",
+   "licence": "MIT",
+   "tailleKo": 3401,
+   "brancheDefaut": "main",
+   "pushGitHub": "2026-10-29T18:23:24Z",
+   "joursDepuisPush": 0,
+   "commit": {
+    "sha": "92f0243",
+    "auteur": "GuiiuG",
+    "date": "2026-10-29T18:23:21Z",
+    "dateCommit": "2026-10-29T18:23:21Z",
+    "sujet": "chore(deps): correctifs et mineures du 29/10 (#109)",
+    "jours": 0
+   },
+   "local": null,
+   "pagesUrl": "https://mister-guiiug.github.io/pwa-starter-kit/",
+   "prs": [],
+   "workflows": [
+    {
+     "nom": "CI",
+     "fichier": "ci.yml",
+     "chemin": ".github/workflows/ci.yml",
+     "reutilisable": false,
+     "etat": "encours",
+     "surDefaut": true,
+     "conclusion": null,
+     "date": "2026-10-29T18:23:25Z",
+     "url": "https://github.com/mister-guiiug/pwa-starter-kit/actions/runs/40930340654",
+     "duree": 237000,
+     "branche": "main",
+     "derniers": [
+      {
+       "etat": "encours",
+       "conclusion": null,
+       "statut": "in_progress",
+       "date": "2026-10-29T18:23:25Z",
+       "url": "https://github.com/mister-guiiug/pwa-starter-kit/actions/runs/40930340654",
+       "num": 224,
+       "ms": 237000,
+       "branche": "main",
+       "titre": "chore(deps): correctifs et mineures du 29/10 (#109)",
+       "id": 40930340654
+      }
+     ]
+    },
+    {
+     "nom": "CodeQL",
+     "fichier": "codeql.yml",
+     "chemin": ".github/workflows/codeql.yml",
+     "reutilisable": false,
+     "etat": "encours",
+     "surDefaut": true,
+     "conclusion": null,
+     "date": "2026-10-29T18:23:25Z",
+     "url": "https://github.com/mister-guiiug/pwa-starter-kit/actions/runs/40930339961",
+     "duree": 222000,
+     "branche": "main",
+     "derniers": [
+      {
+       "etat": "encours",
+       "conclusion": null,
+       "statut": "in_progress",
+       "date": "2026-10-29T18:23:25Z",
+       "url": "https://github.com/mister-guiiug/pwa-starter-kit/actions/runs/40930339961",
+       "num": 32,
+       "ms": 222000,
+       "branche": "main",
+       "titre": "chore(deps): correctifs et mineures du 29/10 (#109)",
+       "id": 40930339961
+      }
+     ]
+    },
+    {
+     "nom": "Deploy",
+     "fichier": "deploy.yml",
+     "chemin": ".github/workflows/deploy.yml",
+     "reutilisable": false,
+     "etat": "vert",
+     "surDefaut": true,
+     "conclusion": "success",
+     "date": "2026-10-29T18:23:25Z",
+     "url": "https://github.com/mister-guiiug/pwa-starter-kit/actions/runs/40930340703",
+     "duree": 242000,
+     "branche": "main",
+     "derniers": [
+      {
+       "etat": "vert",
+       "conclusion": "success",
+       "statut": "completed",
+       "date": "2026-10-29T18:23:25Z",
+       "url": "https://github.com/mister-guiiug/pwa-starter-kit/actions/runs/40930340703",
+       "num": 108,
+       "ms": 242000,
+       "branche": "main",
+       "titre": "chore(deps): correctifs et mineures du 29/10 (#109)",
+       "id": 40930340703
+      }
+     ]
+    },
+    {
+     "nom": "Lighthouse",
+     "fichier": "lighthouse.yml",
+     "chemin": ".github/workflows/lighthouse.yml",
+     "reutilisable": false,
+     "etat": "vert",
+     "surDefaut": false,
+     "conclusion": "success",
+     "date": "2026-10-29T18:11:35Z",
+     "url": "https://github.com/mister-guiiug/pwa-starter-kit/actions/runs/40928465274",
+     "duree": 236000,
+     "branche": "chore/correctifs-mineures-2026-10-29",
+     "derniers": [
+      {
+       "etat": "vert",
+       "conclusion": "success",
+       "statut": "completed",
+       "date": "2026-10-29T18:11:35Z",
+       "url": "https://github.com/mister-guiiug/pwa-starter-kit/actions/runs/40928465274",
+       "num": 116,
+       "ms": 236000,
+       "branche": "chore/correctifs-mineures-2026-10-29",
+       "titre": "chore(deps): correctifs et mineures du 29/10",
+       "id": 40928465274
+      }
+     ]
+    },
+    {
+     "nom": "Supabase tests",
+     "fichier": "supabase-tests.yml",
+     "chemin": ".github/workflows/supabase-tests.yml",
+     "reutilisable": false,
+     "etat": "vert",
+     "surDefaut": true,
+     "conclusion": "success",
+     "date": "2026-10-01T20:48:23Z",
+     "url": "https://github.com/mister-guiiug/pwa-starter-kit/actions/runs/36924257958",
+     "duree": 70000,
+     "branche": "main",
+     "derniers": [
+      {
+       "etat": "vert",
+       "conclusion": "success",
+       "statut": "completed",
+       "date": "2026-10-01T20:48:23Z",
+       "url": "https://github.com/mister-guiiug/pwa-starter-kit/actions/runs/36924257958",
+       "num": 13,
+       "ms": 70000,
+       "branche": "main",
+       "titre": "test(supabase): interdire 40001, que PostgREST rejoue sans fin (#86)",
+       "id": 36924257958
+      }
+     ]
+    },
+    {
+     "nom": "Cleanup runs",
+     "fichier": "cleanup-runs.yml",
+     "chemin": ".github/workflows/cleanup-runs.yml",
+     "reutilisable": false,
+     "etat": "jamais",
+     "surDefaut": false,
+     "conclusion": null,
+     "date": null,
+     "url": "https://github.com/mister-guiiug/pwa-starter-kit/blob/main/.github/workflows/cleanup-runs.yml",
+     "duree": null,
+     "branche": null,
+     "derniers": []
+    },
+    {
+     "nom": "Supabase keep-alive",
+     "fichier": "supabase-keepalive.yml",
+     "chemin": ".github/workflows/supabase-keepalive.yml",
+     "reutilisable": false,
+     "etat": "neutre",
+     "surDefaut": true,
+     "conclusion": "skipped",
+     "date": "2026-10-29T11:16:34Z",
+     "url": "https://github.com/mister-guiiug/pwa-starter-kit/actions/runs/40864120314",
+     "duree": 1000,
+     "branche": "main",
+     "derniers": [
+      {
+       "etat": "neutre",
+       "conclusion": "skipped",
+       "statut": "completed",
+       "date": "2026-10-29T11:16:34Z",
+       "url": "https://github.com/mister-guiiug/pwa-starter-kit/actions/runs/40864120314",
+       "num": 29,
+       "ms": 1000,
+       "branche": "main",
+       "titre": "Supabase keep-alive",
+       "id": 40864120314
+      }
+     ]
+    },
+    {
+     "nom": "Supabase migrations",
+     "fichier": "supabase-migrations.yml",
+     "chemin": ".github/workflows/supabase-migrations.yml",
+     "reutilisable": false,
+     "etat": "neutre",
+     "surDefaut": true,
+     "conclusion": "skipped",
+     "date": "2026-09-06T17:37:46Z",
+     "url": "https://github.com/mister-guiiug/pwa-starter-kit/actions/runs/34049197777",
+     "duree": 1000,
+     "branche": "main",
+     "derniers": [
+      {
+       "etat": "neutre",
+       "conclusion": "skipped",
+       "statut": "completed",
+       "date": "2026-09-06T17:37:46Z",
+       "url": "https://github.com/mister-guiiug/pwa-starter-kit/actions/runs/34049197777",
+       "num": 3,
+       "ms": 1000,
+       "branche": "main",
+       "titre": "feat: supprimer son compte (prouvé en pgTAP) et écrire hors ligne (V9…",
+       "id": 34049197777
+      }
+     ]
+    }
+   ],
+   "compte": {
+    "vert": 3,
+    "rouge": 0,
+    "neutre": 2,
+    "encours": 2,
+    "jamais": 1
+   },
+   "dossiers": [],
+   "dossiersIncertains": false,
+   "usageSocle": {
+    "v": 4,
+    "workflows": [
+     "cleanup-runs.yml",
+     "pwa-ci.yml",
+     "pwa-deploy.yml",
+     "pwa-lighthouse.yml",
+     "pwa-supabase-keepalive.yml",
+     "pwa-supabase-migrate.yml",
+     "pwa-supabase-test.yml"
+    ],
+    "appels": [
+     {
+      "workflow": "pwa-ci.yml",
+      "avec": {
+       "run-e2e": "true",
+       "run-type-check-7": "true"
+      }
+     },
+     {
+      "workflow": "cleanup-runs.yml",
+      "avec": {
+       "keep": "${{ inputs.keep }}"
+      }
+     },
+     {
+      "workflow": "pwa-deploy.yml",
+      "avec": {
+       "use-base-path": "true",
+       "build-env": "|"
+      }
+     },
+     {
+      "workflow": "pwa-lighthouse.yml",
+      "avec": {}
+     },
+     {
+      "workflow": "pwa-supabase-keepalive.yml",
+      "avec": {}
+     },
+     {
+      "workflow": "pwa-supabase-migrate.yml",
+      "avec": {}
+     },
+     {
+      "workflow": "pwa-supabase-test.yml",
+      "avec": {}
+     }
+    ],
+    "fichiers": [],
+    "incomplet": false,
+    "modules": [
+     "analytics",
+     "components.css",
+     "eslint-react",
+     "react/i18n",
+     "tsconfig-app-react"
+    ],
+    "inconnus": [],
+    "viaMotif": [],
+    "outils": [
+     "pwa-bundle-budget",
+     "pwa-doctor",
+     "pwa-icons",
+     "pwa-screenshots",
+     "pwa-typecheck-7"
+    ],
+    "outilsCi": []
+   },
+   "paquet": {
+    "nom": "pwa-starter-kit",
+    "version": "0.1.0",
+    "prive": true
+   },
+   "nbDeps": 36,
+   "nbVerrouilles": 725,
+   "nbCrates": null,
+   "langage": "TypeScript",
+   "lectureIncomplete": false,
+   "famille": "socle",
+   "role": "role.squelette",
+   "maturite": null,
+   "alertes": {
+    "etat": "lu",
+    "total": 1,
+    "graves": 0,
+    "production": 0,
+    "ids": [
+     "CVE-2026-93753"
+    ]
+   },
+   "scanning": {
+    "etat": "lu",
+    "total": 0,
+    "graves": 0,
+    "erreurs": 0,
+    "ids": []
+   },
+   "envManifest": {
+    "etat": "ok",
+    "n": 7
+   },
+   "ruleset": {
+    "etat": "actif",
+    "n": 1
+   },
+   "pages": {
+    "url": "https://mister-guiiug.github.io/pwa-starter-kit/",
+    "code": 200,
+    "ok": true,
+    "ms": 42,
+    "titre": "PWA Starter Kit - squelette d'application web installable"
+   },
+   "prod": {
+    "commit": "92f0243",
+    "construit": "2026-10-29T18:25:50.039Z",
+    "etat": "aJour",
+    "fugaces": [],
+    "mortes": []
+   },
+   "pile": [
+    {
+     "nom": "pile.socle",
+     "paquet": "@mister-guiiug/dev-pwa-config",
+     "version": "6.28.1",
+     "verrouille": true,
+     "amont": "6.28.1"
+    },
+    {
+     "nom": "React",
+     "paquet": "react",
+     "version": "19.3.1",
+     "verrouille": true,
+     "amont": "19.3.1"
+    },
+    {
+     "nom": "Vite",
+     "paquet": "vite",
+     "version": "8.3.5",
+     "verrouille": true,
+     "amont": "8.3.5"
+    },
+    {
+     "nom": "Vitest",
+     "paquet": "vitest",
+     "version": "5.0.5",
+     "verrouille": true,
+     "amont": "5.0.5"
+    },
+    {
+     "nom": "TypeScript",
+     "paquet": "typescript",
+     "version": "6.0.3",
+     "verrouille": true,
+     "amont": "7.0.2"
+    },
+    {
+     "nom": "Tailwind",
+     "paquet": "tailwindcss",
+     "version": "4.3.3",
+     "verrouille": true,
+     "amont": "4.3.3"
+    },
+    {
+     "nom": "Supabase",
+     "paquet": "@supabase/supabase-js",
+     "version": "2.118.0",
+     "verrouille": true,
+     "amont": "2.118.0"
+    },
+    {
+     "nom": "Playwright",
+     "paquet": "@playwright/test",
+     "version": "1.64.1",
+     "verrouille": true,
+     "amont": "1.64.1"
+    }
+   ]
+  }
+ ],
+ "libs": [
+  {
+   "paquet": "Node.js",
+   "ecosysteme": "node",
+   "fichier": ".nvmrc",
+   "nbDepots": 26,
+   "nbTransitifs": 0,
+   "nbVersions": 1,
+   "versions": [
+    {
+     "version": "26.13.0",
+     "depots": [
+      {
+       "depot": "mister-cim10",
+       "plage": "26.13.0",
+       "verrouille": true
+      },
+      {
+       "depot": "pwa-starter-kit",
+       "plage": "26.13.0",
+       "verrouille": true
+      }
+     ]
+    }
+   ],
+   "amont": "26.13.0",
+   "enRetard": 0,
+   "majeursAdmis": null,
+   "plusRecente": "26.13.0",
+   "publieLe": "2026-10-28T00:00:00.000Z",
+   "publieAmont": "2026-10-28T00:00:00.000Z",
+   "depotAmont": "nodejs/node"
+  },
+  {
+   "paquet": "@mister-guiiug/dev-pwa-config",
+   "alias": null,
+   "ecosysteme": "npm",
+   "nbDepots": 22,
+   "nbTransitifs": 0,
+   "nbVersions": 1,
+   "versions": [
+    {
+     "version": "6.28.1",
+     "depots": [
+      {
+       "depot": "mister-cim10",
+       "plage": "^6.28.1",
+       "verrouille": true
+      },
+      {
+       "depot": "pwa-starter-kit",
+       "plage": "^6.28.1",
+       "verrouille": true
+      }
+     ]
+    }
+   ],
+   "amont": "6.28.1",
+   "enRetard": 0,
+   "majeursAdmis": null,
+   "plusRecente": "6.28.1",
+   "publieLe": "2026-10-26T19:47:04Z",
+   "publieAmont": "2026-10-26T19:47:04Z",
+   "depotAmont": "mister-guiiug/dev-pwa-config"
+  },
+  {
+   "paquet": "lucide-react",
+   "alias": null,
+   "ecosysteme": "npm",
+   "nbDepots": 18,
+   "nbTransitifs": 0,
+   "nbVersions": 2,
+   "versions": [
+    {
+     "version": "1.64.0",
+     "depots": [
+      {
+       "depot": "pwa-starter-kit",
+       "plage": "^1.64.0",
+       "verrouille": true
+      }
+     ]
+    },
+    {
+     "version": "1.63.0",
+     "depots": [
+      {
+       "depot": "mister-commitia",
+       "dossier": "apps/desktop",
+       "plage": "^1.63.0",
+       "verrouille": true
+      }
+     ]
+    }
+   ],
+   "amont": "1.64.0",
+   "enRetard": 1,
+   "majeursAdmis": null,
+   "plusRecente": "1.64.0",
+   "publieLe": "2026-10-29T06:10:55.137Z",
+   "publieAmont": "2026-10-29T06:10:55.137Z",
+   "depotAmont": "lucide-icons/lucide"
+  },
+  {
+   "paquet": "motion",
+   "alias": null,
+   "ecosysteme": "npm",
+   "nbDepots": 1,
+   "nbTransitifs": 0,
+   "nbVersions": 1,
+   "versions": [
+    {
+     "version": "14.7.1",
+     "depots": []
+    }
+   ],
+   "amont": "14.8.0",
+   "enRetard": 1,
+   "majeursAdmis": null,
+   "plusRecente": "14.7.1",
+   "publieLe": "2026-10-29T18:24:27.701Z",
+   "publieAmont": "2026-10-29T18:24:27.701Z",
+   "depotAmont": "motiondivision/motion"
+  }
+ ],
+ "echecs": [
+  {
+   "depot": "mister-cim10",
+   "famille": "pwa",
+   "workflow": "CI",
+   "date": "2026-10-29T17:00:00Z",
+   "jours": 0,
+   "conclusion": "failure",
+   "branche": "main",
+   "url": "https://github.com/mister-guiiug/mister-cim10/actions/runs/1",
+   "jobs": [
+    "quality / tests"
+   ],
+   "etape": "Run npm test",
+   "demarrage": false
+  }
+ ],
+ "motifsPartages": [],
+ "activite": [
+  {
+   "depot": "mister-cim10",
+   "famille": "pwa",
+   "jours": 0,
+   "date": "2026-10-29T18:22:27Z"
+  },
+  {
+   "depot": "mister-claude-skills",
+   "famille": "autre",
+   "jours": 0,
+   "date": "2026-10-28T21:37:47Z"
+  },
+  {
+   "depot": "mister-commitia",
+   "famille": "desktop",
+   "jours": 0,
+   "date": "2026-10-29T18:11:44Z"
+  },
+  {
+   "depot": "pwa-starter-kit",
+   "famille": "socle",
+   "jours": 0,
+   "date": "2026-10-29T18:23:21Z"
+  }
+ ],
+ "socle": "@mister-guiiug/dev-pwa-config",
+ "socleAPublier": null,
+ "seuilDormanceJours": 365,
+ "renovateLu": true,
+ "pairsSocle": [
+  "@eslint/js",
+  "eslint",
+  "eslint-plugin-jsx-a11y",
+  "eslint-plugin-react-hooks",
+  "eslint-plugin-react-refresh",
+  "globals",
+  "prettier",
+  "typescript",
+  "typescript-eslint",
+  "vitest",
+  "web-vitals"
+ ],
+ "socleOffre": {
+  "version": "6.28.1",
+  "modules": [
+   "analytics",
+   "components.css",
+   "eslint-base",
+   "eslint-react",
+   "react/app-header",
+   "react/i18n",
+   "tsconfig-app",
+   "tsconfig-app-react"
+  ],
+  "categories": {
+   "analytics": "bibliotheque",
+   "components.css": "outillage",
+   "eslint-base": "outillage",
+   "eslint-react": "outillage",
+   "react/app-header": "composant",
+   "react/i18n": "composant",
+   "tsconfig-app": "outillage",
+   "tsconfig-app-react": "outillage"
+  },
+  "outils": [
+   "pwa-bindings",
+   "pwa-bundle-budget",
+   "pwa-doctor",
+   "pwa-env",
+   "pwa-icons",
+   "pwa-og-image",
+   "pwa-pgtap",
+   "pwa-screenshots",
+   "pwa-typecheck-7"
+  ],
+  "workflows": [
+   "cleanup-runs.yml",
+   "no-ai-attribution.yml",
+   "npm-publish.yml",
+   "pwa-ci.yml",
+   "pwa-deploy.yml",
+   "pwa-lighthouse.yml",
+   "pwa-supabase-keepalive.yml",
+   "pwa-supabase-migrate.yml",
+   "pwa-supabase-test.yml",
+   "pwa-vice.yml",
+   "pwa-worker-deploy.yml"
+  ],
+  "ci": {
+   "pwa-ci.yml": {
+    "defauts": {
+     "node-version": "26.13.0",
+     "run-format-check": "true",
+     "run-lint": "true",
+     "run-type-check": "true",
+     "run-type-check-7": "false",
+     "run-tests": "true",
+     "run-coverage": "false",
+     "run-build": "true",
+     "run-doctor": "false",
+     "doctor-strict": "false",
+     "verify-lockfile": "true",
+     "run-npm-audit": "true",
+     "npm-audit-level": "high",
+     "run-e2e": "false",
+     "e2e-grep": "@critical|@a11y",
+     "e2e-project": "chromium",
+     "e2e-install": "",
+     "build-env": "",
+     "server-dir": ""
+    },
+    "outils": [
+     {
+      "outil": "pwa-doctor",
+      "si": [
+       {
+        "input": "run-doctor",
+        "vrai": true
+       }
+      ]
+     }
+    ]
+   }
+  },
+  "graphe": {
+   "v": 4,
+   "sha": "0c1ebc7",
+   "modules": {
+    "eslint-react": [
+     "eslint-base"
+    ],
+    "tsconfig-app-react": [
+     "tsconfig-app"
+    ],
+    "react/app-header": [],
+    "react/i18n": [],
+    "components.css": []
+   }
+  }
+ },
+ "changements": [
+  {
+   "type": "alertes",
+   "de": 23,
+   "a": 22
+  },
+  {
+   "type": "scanning",
+   "de": 74,
+   "a": 18
+  },
+  {
+   "type": "amont",
+   "paquet": "posthog-js",
+   "de": "1.441.2",
+   "a": "1.442.1",
+   "nbDepots": 21,
+   "majeur": false
+  },
+  {
+   "type": "amont",
+   "paquet": "lucide-react",
+   "de": "1.63.0",
+   "a": "1.64.0",
+   "nbDepots": 18,
+   "majeur": false
+  },
+  {
+   "type": "amont",
+   "paquet": "motion",
+   "de": "14.7.1",
+   "a": "14.8.0",
+   "nbDepots": 1,
+   "majeur": false
+  },
+  {
+   "type": "amont",
+   "paquet": "rolldown",
+   "de": "1.2.15",
+   "a": "1.2.16",
+   "nbDepots": 1,
+   "majeur": false
+  }
+ ],
+ "compareA": "2026-10-29T02:23:48.948Z",
+ "gabarit": "e476d345df47",
+ "historique": [
+  {
+   "jour": "2026-10-25",
+   "taux": 99,
+   "verts": 166,
+   "rouges": 1,
+   "depots": 31,
+   "dormantes": 6,
+   "dormantesArretees": 1,
+   "alertes": 9,
+   "alertesGraves": 3,
+   "scanning": 71,
+   "scanningGraves": 55,
+   "sansEnvManifest": 0,
+   "depotsSansRuleset": 0,
+   "socleEnRetard": 20
+  },
+  {
+   "jour": "2026-10-26",
+   "taux": 99,
+   "verts": 166,
+   "rouges": 1,
+   "depots": 31,
+   "dormantes": 6,
+   "dormantesArretees": 1,
+   "alertes": 144,
+   "alertesGraves": 29,
+   "scanning": 74,
+   "scanningGraves": 55,
+   "sansEnvManifest": 0,
+   "depotsSansRuleset": 0,
+   "socleEnRetard": 0
+  },
+  {
+   "jour": "2026-10-27",
+   "taux": 100,
+   "verts": 167,
+   "rouges": 0,
+   "depots": 31,
+   "dormantes": 6,
+   "dormantesArretees": 1,
+   "alertes": 144,
+   "alertesGraves": 29,
+   "scanning": 74,
+   "scanningGraves": 55,
+   "sansEnvManifest": 0,
+   "depotsSansRuleset": 0,
+   "socleEnRetard": 0
+  },
+  {
+   "jour": "2026-10-28",
+   "taux": 100,
+   "verts": 167,
+   "rouges": 0,
+   "depots": 31,
+   "dormantes": 6,
+   "dormantesArretees": 1,
+   "alertes": 36,
+   "alertesGraves": 12,
+   "scanning": 74,
+   "scanningGraves": 55,
+   "sansEnvManifest": 0,
+   "depotsSansRuleset": 0,
+   "socleEnRetard": 0
+  },
+  {
+   "jour": "2026-10-29",
+   "taux": 100,
+   "verts": 153,
+   "rouges": 0,
+   "depots": 31,
+   "dormantes": 6,
+   "dormantesArretees": 1,
+   "alertes": 22,
+   "alertesGraves": 1,
+   "scanning": 18,
+   "scanningGraves": 6,
+   "sansEnvManifest": 0,
+   "depotsSansRuleset": 0,
+   "socleEnRetard": 0
+  }
+ ],
+ "journal": [
+  {
+   "type": "alertes",
+   "de": 23,
+   "a": 22,
+   "quand": "2026-10-29T18:27:49.157Z"
+  },
+  {
+   "type": "scanning",
+   "de": 74,
+   "a": 18,
+   "quand": "2026-10-29T18:27:49.157Z"
+  },
+  {
+   "type": "amont",
+   "paquet": "motion",
+   "de": "14.7.1",
+   "a": "14.8.0",
+   "nbDepots": 1,
+   "majeur": false,
+   "quand": "2026-10-29T18:27:49.157Z"
+  },
+  {
+   "type": "amont",
+   "paquet": "posthog-js",
+   "de": "1.441.2",
+   "a": "1.442.1",
+   "nbDepots": 21,
+   "majeur": false,
+   "quand": "2026-10-29T16:53:59.521Z"
+  },
+  {
+   "type": "amont",
+   "paquet": "rolldown",
+   "de": "1.2.15",
+   "a": "1.2.16",
+   "nbDepots": 1,
+   "majeur": false,
+   "quand": "2026-10-29T16:53:59.521Z"
+  }
+ ]
+}

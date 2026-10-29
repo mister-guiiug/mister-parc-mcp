@@ -1,0 +1,54 @@
+# Refuse les signatures d'assistant IA sur les pull requests.
+#
+# Porté de miss-contraction, qui a écrit la règle le premier ; elle vaut pour
+# tout le compte. Ce dépôt n'a ni package.json ni hooks git : ce contrôle-ci,
+# qui relit les commits et les fichiers de la pull request, est le seul. Il ne
+# relit que la branche (base..head) : l'historique déjà fusionné n'est pas
+# réécrit. Copie de celui du dépôt .github, avec son script.
+#
+# Le job ci-dessous est un contexte exigé par le ruleset, avec celui de ci.yml
+# (CHECKS de scripts/apply-rulesets.mjs, dans dev-pwa-config) : le renommer
+# gèlerait toutes les PR du dépôt.
+name: Signatures IA
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  commits:
+    name: Commits et fichiers sans signature d'assistant
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      # Passés par l'environnement, jamais recopiés dans le script du shell.
+      SHA_BASE: ${{ github.event.pull_request.base.sha }}
+      SHA_TETE: ${{ github.event.pull_request.head.sha }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # L'historique des deux côtés, pour lister les commits de la branche.
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Relire les messages de commit de la branche
+        run: |
+          echo "Commits examinés :"
+          git log --format='  %h %s' "$SHA_BASE..$SHA_TETE"
+          faute=0
+          for sha in $(git rev-list "$SHA_BASE..$SHA_TETE"); do
+            git log -1 --format='%B' "$sha" > "$RUNNER_TEMP/message.txt"
+            if ! node scripts/check-ai-attribution.mjs --message "$RUNNER_TEMP/message.txt"; then
+              echo "  ↑ commit $sha"
+              faute=1
+            fi
+          done
+          exit $faute
+
+      - name: Relire les fichiers modifiés
+        run: |
+          fichiers=$(git diff --name-only --diff-filter=ACMR "$SHA_BASE..$SHA_TETE")
+          [ -z "$fichiers" ] && exit 0
+          node scripts/check-ai-attribution.mjs --files $fichiers
