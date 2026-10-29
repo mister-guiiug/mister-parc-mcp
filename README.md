@@ -45,12 +45,17 @@ Tout est public : le serveur n'a **aucun jeton** et aucune variable d'environnem
 
 ## Se connecter
 
-Le serveur déployé est derrière l'authentification de Horizon : seuls les membres de
-l'organisation Horizon s'y connectent, par une connexion OAuth que le client ouvre lui-même.
+Le serveur est en ligne à **`https://mister-parc-mcp.fastmcp.app/mcp`**, derrière
+l'authentification de Horizon : seuls les membres de l'organisation Horizon `mister-guiiug`
+s'y connectent, par une connexion OAuth que le client ouvre lui-même. Sans authentification,
+le gateway répond 401.
 
 ```bash
-claude mcp add --transport http mister-parc https://<nom-du-serveur>.fastmcp.app/mcp
+claude mcp add --transport http mister-parc https://mister-parc-mcp.fastmcp.app/mcp
 ```
+
+Un client sans connexion interactive (un script, une CI) passe une clé d'API Horizon
+(`fmcp_…`) comme jeton porteur.
 
 En local, sans Horizon, sur stdio :
 
@@ -60,7 +65,9 @@ claude mcp add mister-parc-local -- uv run --directory <chemin du dépôt> fastm
 
 ## Déployer sur Horizon
 
-Dans [horizon.prefect.io](https://horizon.prefect.io), créer un serveur depuis ce dépôt :
+Le projet Horizon `mister-parc-mcp` (organisation `mister-guiiug`) a été créé le 29/10/2026
+par l'API de Horizon, depuis ce dépôt public, sans connexion GitHub : sa source est la branche
+`main`, lue en accès public. Ses réglages :
 
 | Réglage | Valeur |
 |---|---|
@@ -70,7 +77,12 @@ Dans [horizon.prefect.io](https://horizon.prefect.io), créer un serveur depuis 
 | Authentification | activée (le défaut) |
 | Variables | aucune |
 
-Chaque push sur `main` redéploie ; chaque PR a son déploiement d'aperçu.
+**Un push sur `main` ne redéploie pas encore.** Le redéploiement automatique et les aperçus
+de PR passent par l'application GitHub de Horizon : la relier une fois (Settings, puis
+Integrations, accès au seul dépôt `mister-parc-mcp`), et la cible de production suivra
+`main`. D'ici là, chaque mise en production est une nouvelle version créée par l'API
+(`POST …/projects/<id>/versions`, source `github` au commit voulu, déployée sur la cible
+`production`), ou un redéploiement depuis le tableau de bord de Horizon.
 
 **Les limites de Horizon qui comptent ici** : 170 secondes par requête, 6 Mo par réponse,
 1 Go de mémoire, disque effacé entre deux requêtes, pas de tâche de fond. `donnees.json`
