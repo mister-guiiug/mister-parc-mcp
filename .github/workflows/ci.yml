@@ -1,0 +1,42 @@
+# La CI du serveur, sur chaque PR et sur main.
+#
+# Horizon reconstruit le serveur à chaque push sur `main` : ce qui casse ici
+# casserait là-bas, mais en production. Le dernier pas est le contrôle que
+# Horizon recommande lui-même : `fastmcp inspect` charge le point d'entrée comme
+# le fera la plateforme, et liste les outils.
+#
+# Le nom du job est un contexte exigé par le ruleset (CHECKS de
+# scripts/apply-rulesets.mjs, dans dev-pwa-config) : le renommer gèlerait toutes
+# les PR du dépôt.
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verifier:
+    name: Lint, tests et inspection
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      # Python 3.12, celui de `.python-version`, qui est aussi le défaut de Horizon.
+      - uses: astral-sh/setup-uv@v10.3.3
+
+      - run: uv sync --locked
+
+      - run: uv run ruff check
+
+      - run: uv run ruff format --check
+
+      - run: uv run pytest
+
+      - run: uv run fastmcp inspect serveur.py:mcp
