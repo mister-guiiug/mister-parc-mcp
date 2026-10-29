@@ -66,8 +66,8 @@ claude mcp add mister-parc-local -- uv run --directory <chemin du dépôt> fastm
 ## Déployer sur Horizon
 
 Le projet Horizon `mister-parc-mcp` (organisation `mister-guiiug`) a été créé le 29/10/2026
-par l'API de Horizon, depuis ce dépôt public, sans connexion GitHub : sa source est la branche
-`main`, lue en accès public. Ses réglages :
+par l'API de Horizon. Sa source est la branche `main` de ce dépôt, lue par l'application
+GitHub de Horizon, qui n'a accès qu'à ce dépôt. Ses réglages :
 
 | Réglage | Valeur |
 |---|---|
@@ -77,12 +77,10 @@ par l'API de Horizon, depuis ce dépôt public, sans connexion GitHub : sa sourc
 | Authentification | activée (le défaut) |
 | Variables | aucune |
 
-**Un push sur `main` ne redéploie pas encore.** Le redéploiement automatique et les aperçus
-de PR passent par l'application GitHub de Horizon : la relier une fois (Settings, puis
-Integrations, accès au seul dépôt `mister-parc-mcp`), et la cible de production suivra
-`main`. D'ici là, chaque mise en production est une nouvelle version créée par l'API
-(`POST …/projects/<id>/versions`, source `github` au commit voulu, déployée sur la cible
-`production`), ou un redéploiement depuis le tableau de bord de Horizon.
+**Chaque push sur `main` redéploie la production** : la cible `production` suit `main`.
+**Chaque PR a son déploiement d'aperçu**, derrière la même authentification. Un retour en
+arrière se fait depuis le tableau de bord de Horizon, ou par l'API (`rollback` d'un
+déploiement précédent), pendant trente jours.
 
 **Les limites de Horizon qui comptent ici** : 170 secondes par requête, 6 Mo par réponse,
 1 Go de mémoire, disque effacé entre deux requêtes, pas de tâche de fond. `donnees.json`
