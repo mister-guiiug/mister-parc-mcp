@@ -16,7 +16,8 @@ from fastmcp import FastMCP
 from pydantic import Field
 
 from . import sources
-from .parc import LECTURE, trouver
+from .parc import LECTURE, trouver, version_du_socle
+from .sorties import DocumentSocle, Module, Offre, RechercheSocle, Section, Usage, Workflow
 
 serveur = FastMCP("socle")
 
@@ -57,13 +58,13 @@ async def _document(version: str, fichier: str) -> tuple[str, str]:
     return url, await sources.texte_publie(url)
 
 
-@serveur.tool(annotations=LECTURE)
-async def offre() -> dict[str, Any]:
+@serveur.tool(title="Ce que le socle offre", annotations=LECTURE)
+async def offre() -> Offre:
     """Ce que la dernière version publiée du socle offre : ses modules rangés par catégorie
-    (composants, crochets React, configs Vite, outillage…), ses outils en ligne de commande
-    et ses workflows réutilisables.
+    (composants, crochets React, configs Vite, outillage…), ses outils en ligne de commande,
+    ses workflows réutilisables, et les dépendances pairs qu'il attend des applications.
     """
-    _, o = await _offre()
+    d, o = await _offre()
     par_categorie: dict[str, list[str]] = {}
     categories = o.get("categories") or {}
     for m in o.get("modules") or []:
@@ -73,15 +74,16 @@ async def offre() -> dict[str, Any]:
         "modules": par_categorie,
         "outils": o.get("outils") or [],
         "workflows": o.get("workflows") or [],
+        "pairs": d.get("pairsSocle") or [],
     }
 
 
-@serveur.tool(annotations=LECTURE)
+@serveur.tool(title="Module du socle", annotations=LECTURE)
 async def module(
     nom: Annotated[
         str, Field(description="Nom du module, tel que l'importe une app : react/i18n, analytics…")
     ],
-) -> dict[str, Any]:
+) -> Module:
     """Un module du socle : sa catégorie, les modules qu'il emporte avec lui, ceux qui
     l'emportent, et les dépôts qui l'importent directement.
     """
@@ -103,10 +105,10 @@ async def module(
     }
 
 
-@serveur.tool(annotations=LECTURE)
+@serveur.tool(title="Workflow réutilisable du socle", annotations=LECTURE)
 async def workflow(
     nom: Annotated[str, Field(description="Fichier du workflow réutilisable : pwa-ci.yml…")],
-) -> dict[str, Any]:
+) -> Workflow:
     """Un workflow réutilisable du socle : la ligne `uses:` à écrire (étiquette majeure
     roulante), ses entrées par défaut quand le relevé les connaît, les outils qu'il lance,
     et les dépôts qui l'appellent, avec les entrées qu'ils lui passent.
@@ -132,10 +134,37 @@ async def workflow(
     }
 
 
-@serveur.tool(annotations=LECTURE)
+@serveur.tool(title="Ce qu'un dépôt prend au socle", annotations=LECTURE)
+async def usage(
+    depot: Annotated[str, Field(description="Nom du dépôt, par exemple mister-cim10.")],
+) -> Usage:
+    """Ce qu'un dépôt prend au socle, mesuré dans son code par le relevé : la version qu'il
+    verrouille, les modules qu'il importe, les outils de ses scripts et ceux que la CI
+    partagée lance pour lui, les workflows réutilisables qu'il appelle et avec quelles entrées.
+    """
+    d = await sources.donnees()
+    x = trouver(depot, d.get("depots") or [], "nom", "Dépôt")
+    u = x.get("usageSocle") or {}
+    return {
+        "genere": d.get("genere"),
+        "depot": x["nom"],
+        "socle": version_du_socle(x),
+        "modules": list(u.get("modules") or []),
+        "outils": list(u.get("outils") or []),
+        "outils_ci": list(u.get("outilsCi") or []),
+        "workflows": list(u.get("workflows") or []),
+        "appels": [
+            {"workflow": a.get("workflow", ""), "avec": a.get("avec") or {}}
+            for a in u.get("appels") or []
+        ],
+        "mesure_incomplete": bool(u.get("incomplet")),
+    }
+
+
+@serveur.tool(title="Document du socle", annotations=LECTURE)
 async def doc(
     fichier: Annotated[Document, Field(description="Le document du socle à lire.")],
-) -> dict[str, Any]:
+) -> DocumentSocle:
     """Un document du socle, en entier, à la version publiée : README.md (l'API et la stack
     cible), CONFIG.md (secrets et variables), CONTRIBUTING.md (ce qui entre au socle),
     STRATEGIE.md (le découpage en trois couches). README.md dépasse 100 Ko : pour une question
@@ -147,13 +176,13 @@ async def doc(
     return {"version": version, "fichier": fichier, "url": url, "texte": texte}
 
 
-@serveur.tool(annotations=LECTURE)
+@serveur.tool(title="Chercher dans le socle", annotations=LECTURE)
 async def chercher(
     terme: Annotated[
         str,
         Field(min_length=2, description="Ce que l'on cherche : prefetch, CSP, Supabase, QR…"),
     ],
-) -> dict[str, Any]:
+) -> RechercheSocle:
     """Le socle a-t-il déjà ceci ? Cherche le terme, sans égard à la casse, dans les noms des
     modules, outils et workflows, puis dans les sections de README.md, CONFIG.md et
     CONTRIBUTING.md. À appeler AVANT d'écrire dans une app ce qui pourrait y être.
@@ -161,12 +190,7 @@ async def chercher(
     _, o = await _offre()
     version = str(o.get("version"))
     t = terme.lower()
-    trouve = {
-        "modules": [m for m in o.get("modules") or [] if t in m.lower()],
-        "outils": [x for x in o.get("outils") or [] if t in x.lower()],
-        "workflows": [w for w in o.get("workflows") or [] if t in w.lower()],
-    }
-    extraits: list[dict[str, Any]] = []
+    extraits: list[Section] = []
     total = 0
     for fichier in DOCUMENTS_CHERCHES:
         url, texte = await _document(version, fichier)
@@ -187,7 +211,9 @@ async def chercher(
     return {
         "version": version,
         "terme": terme,
-        **trouve,
+        "modules": [m for m in o.get("modules") or [] if t in m.lower()],
+        "outils": [x for x in o.get("outils") or [] if t in x.lower()],
+        "workflows": [w for w in o.get("workflows") or [] if t in w.lower()],
         "sections": extraits,
         "sections_trouvees": total,
     }

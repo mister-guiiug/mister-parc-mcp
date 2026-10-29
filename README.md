@@ -15,20 +15,44 @@ agent ne le réécrive dans une application.
 |---|---|
 | `parc_etat` | chiffres clés du dernier relevé, version du socle, rubriques « À faire », ce qui a bougé |
 | `parc_a_faire` | la liste « À faire » avec son détail, filtrable par niveau ou par rubrique |
-| `parc_depots` | une ligne par dépôt : CI, alertes, CodeQL, PR, site, version du socle |
+| `parc_depots` | une ligne par dépôt : CI, alertes, CodeQL, PR, site, version du socle, ruleset |
 | `parc_depot` | tout ce que le relevé sait d'un dépôt |
 | `parc_echecs` | les workflows rouges sur la branche par défaut, avec job et étape |
+| `parc_prs` | les PR ouvertes sur tout le compte, avec l'état de leur CI |
+| `parc_alertes` | les alertes Dependabot (CVE, GHSA, part en production) et CodeQL (règles), par dépôt |
+| `parc_sites` | les sites en ligne : code HTTP, temps de réponse, production face à `main`, URL mortes |
+| `parc_renovate` | ce que Renovate attend dans chaque dépôt, et ce qu'il ne sait pas résoudre |
 | `parc_librairie` | une librairie : ses versions, et quel dépôt est sur laquelle |
 | `parc_librairies_en_retard` | les librairies en retard sur l'amont, les plus en retard d'abord |
+| `parc_chercher` | un nom exact de dépôt ou de librairie, à partir d'un bout de nom ou de description |
 | `parc_tendances` | l'historique quotidien : taux de vert, rouges, alertes |
 | `parc_journal` | les dernières transitions vues par le relevé |
-| `socle_offre` | modules par catégorie, outils et workflows réutilisables du socle |
+| `socle_offre` | modules par catégorie, outils, workflows réutilisables et dépendances pairs du socle |
 | `socle_module` | un module : ce qu'il emporte, ce qui l'emporte, qui l'importe |
 | `socle_workflow` | un workflow réutilisable : la ligne `uses:`, ses défauts, qui l'appelle et avec quoi |
+| `socle_usage` | ce qu'un dépôt prend au socle : version, modules, outils, workflows et leurs entrées |
 | `socle_doc` | README, CONFIG, CONTRIBUTING ou STRATEGIE du socle, à la version publiée |
 | `socle_chercher` | un terme dans les noms du socle et les sections de sa documentation |
 
-Chaque outil se déclare en lecture seule (`readOnlyHint`), et un test l'exige.
+Chaque outil se déclare en lecture seule (`readOnlyHint`), porte un titre lisible et annonce
+la forme de sa réponse (`outputSchema`, tiré de `mister_parc/sorties.py`). Les tests exigent
+les trois, et valident chaque réponse réelle contre le schéma qu'elle annonce.
+
+## Protocole
+
+Le serveur parle MCP **2026-07-28**, par la bibliothèque `mcp` 2.3 et FastMCP 4 : sans état,
+`server/discover`, `resultType` sur chaque résultat. Ce qui revient au serveur lui-même :
+
+- son identité : `serverInfo` porte son nom et **sa** version, celle de `pyproject.toml` ;
+- la fraîcheur de ses listes (SEP-2549) : `ttlMs` d'une heure et `cacheScope` `private`.
+  Derrière Horizon, la liste arrive pourtant avec `ttlMs` 0 : c'est la passerelle qui la
+  réécrit (constaté le 29/10 : 3 600 000 en HTTP local, 0 par `fastmcp.app`) ;
+- une liste d'outils dans un ordre fixe, que les clients peuvent garder en cache ;
+- des schémas JSON Schema 2020-12 en entrée comme en sortie.
+
+FastMCP annonce encore la capacité `logging`, dépréciée par cette version (SEP-2577) : le
+serveur ne journalise rien par MCP, ses journaux vont sur la sortie d'erreur, que Horizon
+recueille.
 
 ## D'où viennent les réponses
 

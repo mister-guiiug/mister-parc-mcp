@@ -5,7 +5,7 @@ configs partagées du socle ne s'y appliquent pas. Les règles du compte, si : a
 signature d'assistant (contrôlée ici par `.github/workflows/no-ai-attribution.yml`), une
 branche et une PR pour tout changement, `main` protégé par le ruleset.
 
-## Trois règles propres à ce dépôt
+## Quatre règles propres à ce dépôt
 
 1. **Lire, ne pas recalculer.** Le serveur lit `donnees.json` et `a-faire.json` (publiés par
    parc-dashboard) et la documentation du socle. S'il faut un chiffre que ces fichiers n'ont
@@ -17,6 +17,11 @@ branche et une PR pour tout changement, `main` protégé par le ruleset.
    `Commits et fichiers sans signature d'assistant` (no-ai-attribution.yml). Les renommer
    gèle toutes les PR, tant que `CHECKS` de `scripts/apply-rulesets.mjs` (dans
    dev-pwa-config) n'est pas mis à jour.
+4. **Un outil annonce sa réponse.** Son type de retour vient de `mister_parc/sorties.py`, d'où
+   FastMCP tire l'`outputSchema`. `tests/test_serveur.py` valide chaque réponse réelle contre
+   ce schéma : un champ du type absent du retour, ou d'un autre type, fait échouer la CI. La
+   liste des outils (`OUTILS`, dans le même test) fixe aussi leur ordre, que le protocole veut
+   stable.
 
 ## Vérifier avant une PR
 

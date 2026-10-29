@@ -22,12 +22,46 @@ const D = JSON.parse(readFileSync(source, 'utf8'))
 const GARDES = ['mister-cim10', 'mister-claude-skills', 'mister-commitia', 'pwa-starter-kit']
 const MODULES = ['analytics', 'components.css', 'eslint-base', 'eslint-react', 'react/app-header', 'react/i18n', 'tsconfig-app', 'tsconfig-app-react']
 
+// Le relevé du 29/10 n'avait ni PR ouverte ni mise à jour Renovate en attente :
+// une de chaque, inventée, à la forme exacte du relevé (releve.mjs, `prsLues`
+// et `d.renovate`).
+const INVENTES = {
+  'mister-cim10': {
+    prs: [
+      {
+        num: 158,
+        titre: "fix(securite): le mot secret OMS n'est plus gardé dans le navigateur",
+        brouillon: false,
+        branche: 'fix/secret-oms-2026-10-29',
+        date: '2026-10-29T20:55:00Z',
+        auteur: 'mister-guiiug',
+        robot: false,
+        url: 'https://github.com/mister-guiiug/mister-cim10/pull/158',
+        ci: 'vert',
+      },
+    ],
+  },
+  'mister-commitia': {
+    renovate: {
+      issue: 'https://github.com/mister-guiiug/mister-commitia/issues/1',
+      enAttente: 2,
+      majeures: 1,
+      introuvables: [],
+      mises: [
+        { titre: 'Update Rust crate tokio to v1.55.0', majeure: false },
+        { titre: 'Update Rust crate rusqlite to v0.42', majeure: true },
+      ],
+    },
+  },
+}
+
 const depots = D.depots
   .filter((d) => GARDES.includes(d.nom))
   .map((d) => ({
     ...d,
     workflows: (d.workflows || []).map((w) => ({ ...w, derniers: (w.derniers || []).slice(0, 1) })),
     usageSocle: d.usageSocle && { ...d.usageSocle, modules: (d.usageSocle.modules || []).filter((m) => MODULES.includes(m)), fichiers: [] },
+    ...INVENTES[d.nom],
   }))
 const gardeLib = (l) => l.enRetard > 0 || l.paquet === 'Node.js' || l.paquet === D.socle
 const libs = D.libs.filter(gardeLib).map((l) => ({
