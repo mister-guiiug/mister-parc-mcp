@@ -4,7 +4,7 @@ version = "0.2.0"
 description = "Serveur MCP en lecture seule sur l'état du parc mister-guiiug : tableau de bord et socle."
 readme = "README.md"
 license = "MIT"
-requires-python = ">=3.14"
+requires-python = ">=3.15.2"
 dependencies = [
     "fastmcp>=4.1.4",
     "httpx>=0.28.1",
